@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>VETLINK - 채용공고 상세</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      color: #111;
+    }
+    header {
+      background: white;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .meta {
+      color: #555;
+      margin-bottom: 20px;
+    }
+    h3 {
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .apply-btn {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    form button {
+      background: #2563eb;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div style="font-size:24px;font-weight:bold;color:#2563eb;">VETLINK</div>
+  <nav>
+    <a href="index.html">홈</a>
+    <a href="jobs.html">채용공고</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <!-- 채용공고 상세 -->
+  <div class="card">
+    <div class="title">수의사 정규직</div>
+    <div class="meta">서울동물메디컬센터 · 서울 강남 · 정규직 · 연봉 5,000만원 · D-5</div>
+
+    <h3>📌 모집 내용</h3>
+    <p>
+      서울동물메디컬센터에서 함께 성장할 수의사 선생님을 모집합니다.
+      최신 장비와 체계적인 진료 시스템을 갖춘 병원입니다.
+    </p>
+
+    <h3>📝 주요 업무</h3>
+    <ul>
+      <li>외과 및 내과 진료</li>
+      <li>입원 환자 관리</li>
+      <li>보호자 상담</li>
+    </ul>
+
+    <h3>🎯 지원 자격</h3>
+    <ul>
+      <li>수의사 면허 소지자</li>
+      <li>신입 / 경력 무관</li>
+      <li>동물 사랑과 책임감 있는 분</li>
+    </ul>
+
+    <h3>💼 근무 조건</h3>
+    <ul>
+      <li>근무 형태: 정규직</li>
+      <li>근무 시간: 주 5일 (협의)</li>
+      <li>급여: 연봉 5,000만원 이상 (경력 협의)</li>
+    </ul>
+
+    <a href="#apply" class="apply-btn">지원하기</a>
+  </div>
+
+  <!-- 지원서 작성 -->
+  <div class="card" id="apply">
+    <h2>✍ 지원서 작성</h2>
+
+    <form>
+      <input type="text" placeholder="이름" />
+      <input type="email" placeholder="이메일" />
+      <input type="tel" placeholder="연락처" />
+      <input type="text" placeholder="경력 (예: 3년)" />
+      <textarea rows="6" placeholder="자기소개 및 지원 동기"></textarea>
+
+      <button type="submit">지원서 제출</button>
+    </form>
+  </div>
+
+</div>
+
+</body>
+</html>
