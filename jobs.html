@@ -2,66 +2,129 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>VETLINK - 채용공고</title>
+  <title>동물병원채용센터 - 채용공고</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f1f5f9;
-      color: #111;
+      background: #f5f7fa;
     }
+
     header {
-      background: white;
+      background: #1f3c88;
+      color: white;
       padding: 20px;
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
+
+    header h1 {
+      margin: 0;
+    }
+
     nav a {
-      margin-left: 20px;
+      color: white;
+      margin-right: 20px;
       text-decoration: none;
-      color: #2563eb;
       font-weight: bold;
     }
+
     .container {
       max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-    .job {
-      background: white;
-      border-radius: 16px;
-      padding: 20px;
-      margin-bottom: 20px;
+      margin: 30px auto;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      gap: 20px;
     }
-    .job h3 {
-      margin: 5px 0;
+
+    /* 왼쪽 직무 메뉴 */
+    .sidebar {
+      width: 220px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
     }
-    .meta {
-      color: #555;
-      font-size: 14px;
+
+    .sidebar h3 {
+      margin-top: 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
     }
-    .btn {
-      background: #2563eb;
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      padding: 8px 0;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .sidebar li:hover {
+      color: #1f3c88;
+      font-weight: bold;
+    }
+
+    /* 메인 영역 */
+    .main {
+      flex: 1;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    /* 지역 탭 */
+    .tabs {
+      margin-bottom: 20px;
+    }
+
+    .tabs button {
+      padding: 10px 20px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 20px;
+      background: #eee;
+      cursor: pointer;
+    }
+
+    .tabs button.active {
+      background: #1f3c88;
       color: white;
-      padding: 10px 18px;
-      border-radius: 10px;
+    }
+
+    /* 테이블 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #f0f2f5;
+    }
+
+    a.job-link {
+      color: #1f3c88;
       text-decoration: none;
       font-weight: bold;
+    }
+
+    a.job-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <div style="font-size:24px;font-weight:bold;color:#2563eb;">VETLINK</div>
+  <h1>동물병원채용센터</h1>
   <nav>
     <a href="index.html">홈</a>
     <a href="jobs.html">채용공고</a>
@@ -69,44 +132,80 @@
 </header>
 
 <div class="container">
-  <h2>채용공고</h2>
 
-  <div class="job">
-    <div>
-      <div class="meta">서울동물메디컬센터</div>
-      <h3>수의사 정규직</h3>
-      <div class="meta">서울 강남 · 정규직 · 연봉 5,000만원</div>
-    </div>
-    <div>
-      <div style="color:#2563eb;font-weight:bold;">D-5</div><br/>
-      <a href="#" class="btn">상세보기</a>
-    </div>
+  <!-- 왼쪽 직무 -->
+  <div class="sidebar">
+    <h3>직무별</h3>
+    <ul>
+      <li>수의사</li>
+      <li>간호테크니션</li>
+      <li>접수코디네이터</li>
+      <li>행정사무</li>
+      <li>애견미용</li>
+    </ul>
   </div>
 
-  <div class="job">
-    <div>
-      <div class="meta">해피펫동물병원</div>
-      <h3>동물간호사</h3>
-      <div class="meta">경기 성남 · 계약직 · 월 280만원</div>
-    </div>
-    <div>
-      <div style="color:#2563eb;font-weight:bold;">D-3</div><br/>
-      <a href="#" class="btn">상세보기</a>
-    </div>
-  </div>
+  <!-- 메인 -->
+  <div class="main">
 
-  <div class="job">
-    <div>
-      <div class="meta">24시 케어동물병원</div>
-      <h3>야간 수의사</h3>
-      <div class="meta">부산 해운대 · 정규직 · 협의</div>
+    <!-- 지역 탭 -->
+    <div class="tabs">
+      <button class="active">서울</button>
+      <button>경기</button>
+      <button>부산</button>
     </div>
-    <div>
-      <div style="color:#2563eb;font-weight:bold;">D-7</div><br/>
-      <a href="#" class="btn">상세보기</a>
-    </div>
-  </div>
 
+    <!-- 채용 리스트 -->
+    <table>
+      <thead>
+        <tr>
+          <th>병원명</th>
+          <th>모집제목</th>
+          <th>직무</th>
+          <th>지역</th>
+          <th>마감</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>행복동물병원</td>
+          <td>
+            <a class="job-link" href="job_detail.html">
+              경력 수의사 모집
+            </a>
+          </td>
+          <td>수의사</td>
+          <td>서울 강남</td>
+          <td>채용중</td>
+        </tr>
+
+        <tr>
+          <td>드림펫동물병원</td>
+          <td>
+            <a class="job-link" href="job_detail.html">
+              간호테크니션 채용
+            </a>
+          </td>
+          <td>간호테크니션</td>
+          <td>경기 성남</td>
+          <td>채용중</td>
+        </tr>
+
+        <tr>
+          <td>부산해운대동물병원</td>
+          <td>
+            <a class="job-link" href="job_detail.html">
+              접수 코디네이터 모집
+            </a>
+          </td>
+          <td>접수코디네이터</td>
+          <td>부산 해운대</td>
+          <td>마감임박</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
 </div>
 
 </body>
