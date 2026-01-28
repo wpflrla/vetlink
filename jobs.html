@@ -118,6 +118,10 @@
     a.job-link:hover {
       text-decoration: underline;
     }
+    .sidebar li.active {
+  font-weight: bold;
+  color: #1f3c88;
+}
   </style>
 </head>
   
@@ -160,8 +164,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // 직무 클릭
   jobItems.forEach(item => {
     item.addEventListener("click", () => {
-      jobItems.forEach(li => li.style.fontWeight = "normal");
-      item.style.fontWeight = "bold";
+      jobItems.forEach(li => li.classList.remove("active"));
+      item.classList.add("active");
 
       currentJob = item.dataset.job;
       filterJobs();
@@ -189,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <div class="sidebar">
     <h3>직무별</h3>
  <ul>
-  <li data-job="ALL"><strong>전체</strong></li>
+  <li data-job="ALL" class="active">전체</li>
   <li data-job="수의사">수의사</li>
   <li data-job="간호테크니션">간호테크니션</li>
   <li data-job="접수코디네이터">접수코디네이터</li>
@@ -252,6 +256,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
+
 
 
 
