@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>채용공고 등록 | 동물병원채용센터</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+    }
+
+    header {
+      background: #1f3c88;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 50px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    input, select, textarea {
+      padding: 12px;
+      font-size: 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 14px;
+      background: #1f3c88;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>동물병원채용센터</h1>
+</header>
+
+<div class="container">
+  <h2>채용공고 등록</h2>
+  <p>병원 채용공고를 등록해주세요.</p>
+
+  <form
+    action="https://formsubmit.co/병원이메일@주소.com"
+    method="POST"
+  >
+    <input type="text" name="hospital" placeholder="병원명" required />
+    <input type="text" name="title" placeholder="모집 제목" required />
+
+    <select name="job" required>
+      <option value="">직무 선택</option>
+      <option>수의사</option>
+      <option>간호테크니션</option>
+      <option>접수코디네이터</option>
+      <option>행정사무</option>
+      <option>애견미용</option>
+    </select>
+
+    <select name="region" required>
+      <option value="">지역 선택</option>
+      <option>서울</option>
+      <option>경기</option>
+      <option>부산</option>
+    </select>
+
+    <textarea name="description" placeholder="근무 조건 / 업무 내용" required></textarea>
+
+    <input type="tel" name="phone" placeholder="담당자 연락처" required />
+    <input type="email" name="email" placeholder="이메일" required />
+
+    <!-- 완료 페이지 -->
+    <input type="hidden" name="_next" value="job-post-success.html">
+
+    <button type="submit">채용공고 등록하기</button>
+  </form>
+</div>
+
+</body>
+</html>
