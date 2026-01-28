@@ -2,121 +2,93 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>동물병원채용센터 - 채용공고</title>
+  <title>동물병원채용센터</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: "Arial", sans-serif;
       background: #f5f7fa;
+      color: #111;
     }
 
     header {
-      background: #1f3c88;
-      color: white;
+      max-width: 1200px;
+      margin: auto;
       padding: 20px;
-    }
-
-    header h1 {
-      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     nav a {
-      color: white;
-      margin-right: 20px;
+      margin-left: 20px;
+      color: #2563eb;
       text-decoration: none;
       font-weight: bold;
     }
 
-    .container {
+    /* 메인 히어로 영역 */
+    .hero {
       max-width: 1200px;
-      margin: 30px auto;
-      display: flex;
-      gap: 20px;
+      margin: auto;
+      padding: 120px 20px;
+      text-align: center;
     }
 
-    /* 왼쪽 직무 메뉴 */
-    .sidebar {
-      width: 220px;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-    }
-
-    .sidebar h3 {
-      margin-top: 0;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 10px;
-    }
-
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .sidebar li {
-      padding: 8px 0;
-      cursor: pointer;
-      color: #333;
-    }
-
-    .sidebar li:hover {
-      color: #1f3c88;
+    .logo {
+      font-size: 48px;
       font-weight: bold;
-    }
-
-    /* 메인 영역 */
-    .main {
-      flex: 1;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-    }
-
-    /* 지역 탭 */
-    .tabs {
       margin-bottom: 20px;
     }
 
-    .tabs button {
-      padding: 10px 20px;
-      margin-right: 10px;
-      border: none;
-      border-radius: 20px;
-      background: #eee;
-      cursor: pointer;
+    .headline {
+      font-size: 30px;
+      margin-bottom: 10px;
     }
 
-    .tabs button.active {
-      background: #1f3c88;
-      color: white;
+    .subline {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 40px;
     }
 
-    /* 테이블 */
-    table {
-      width: 100%;
-      border-collapse: collapse;
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
 
-    th, td {
-      padding: 12px;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
-    }
-
-    th {
-      background: #f0f2f5;
-    }
-
-    a.job-link {
-      color: #1f3c88;
+    .btn {
+      padding: 15px 32px;
+      border-radius: 10px;
+      font-size: 16px;
       text-decoration: none;
       font-weight: bold;
     }
 
-    a.job-link:hover {
-      text-decoration: underline;
+    .btn.primary {
+      background-color: #2563eb;
+      color: white;
+    }
+
+    .btn.secondary {
+      background-color: white;
+      color: #2563eb;
+      border: 2px solid #2563eb;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      background: #f8fafc;
+      color: #555;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 100px;
     }
   </style>
 </head>
@@ -124,89 +96,28 @@
 <body>
 
 <header>
-  <h1>동물병원채용센터</h1>
+  <h2>동물병원채용센터</h2>
   <nav>
     <a href="index.html">홈</a>
     <a href="jobs.html">채용공고</a>
+    <a href="hospital_post.html">병원등록</a>
   </nav>
 </header>
 
-<div class="container">
+<section class="hero">
+  <h1 class="logo">동물병원채용센터</h1>
+  <h2 class="headline">채용이 힘든 동물병원을 위한 해답</h2>
+  <p class="subline">동물병원 전문 인력채용 플랫폼</p>
 
-  <!-- 왼쪽 직무 -->
-  <div class="sidebar">
-    <h3>직무별</h3>
-    <ul>
-      <li>수의사</li>
-      <li>간호테크니션</li>
-      <li>접수코디네이터</li>
-      <li>행정사무</li>
-      <li>애견미용</li>
-    </ul>
+  <div class="hero-buttons">
+    <a href="jobs.html" class="btn primary">채용공고 보기</a>
+    <a href="hospital_post.html" class="btn secondary">병원 공고 등록</a>
   </div>
+</section>
 
-  <!-- 메인 -->
-  <div class="main">
-
-    <!-- 지역 탭 -->
-    <div class="tabs">
-      <button class="active">서울</button>
-      <button>경기</button>
-      <button>부산</button>
-    </div>
-
-    <!-- 채용 리스트 -->
-    <table>
-      <thead>
-        <tr>
-          <th>병원명</th>
-          <th>모집제목</th>
-          <th>직무</th>
-          <th>지역</th>
-          <th>마감</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>행복동물병원</td>
-          <td>
-            <a class="job-link" href="job_detail.html">
-              경력 수의사 모집
-            </a>
-          </td>
-          <td>수의사</td>
-          <td>서울 강남</td>
-          <td>채용중</td>
-        </tr>
-
-        <tr>
-          <td>드림펫동물병원</td>
-          <td>
-            <a class="job-link" href="job_detail.html">
-              간호테크니션 채용
-            </a>
-          </td>
-          <td>간호테크니션</td>
-          <td>경기 성남</td>
-          <td>채용중</td>
-        </tr>
-
-        <tr>
-          <td>부산해운대동물병원</td>
-          <td>
-            <a class="job-link" href="job_detail.html">
-              접수 코디네이터 모집
-            </a>
-          </td>
-          <td>접수코디네이터</td>
-          <td>부산 해운대</td>
-          <td>마감임박</td>
-        </tr>
-      </tbody>
-    </table>
-
-  </div>
-</div>
+<footer>
+  © 2026 동물병원채용센터. All rights reserved.
+</footer>
 
 </body>
 </html>
