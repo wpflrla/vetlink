@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>병원 등록 | 동물병원채용센터</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+    }
+
+    header {
+      background: #1f3c88;
+      color: white;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 14px;
+      border: none;
+      border-radius: 30px;
+      background: #1f3c88;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>동물병원채용센터</h1>
+</header>
+
+<div class="container">
+  <h2>병원 등록 신청</h2>
+  <p>병원 정보를 남겨주시면 채용공고 등록을 도와드립니다.</p>
+
+  <form
+    action="https://formsubmit.co/너의이메일@주소.com"
+    method="POST"
+  >
+    <input type="text" name="hospital" placeholder="병원명" required />
+    <input type="text" name="manager" placeholder="담당자 이름" required />
+    <input type="tel" name="phone" placeholder="연락처" required />
+    <input type="email" name="email" placeholder="이메일" required />
+    <input type="text" name="region" placeholder="지역 (예: 서울 강남)" required />
+    <textarea name="job" placeholder="모집 직무 및 간단한 설명" rows="4"></textarea>
+
+    <input type="hidden" name="_subject" value="📌 병원 등록 신청" />
+    <input type="hidden" name="_next" value="hospital-success.html" />
+
+    <button type="submit">병원 등록 신청하기</button>
+  </form>
+</div>
+
+</body>
+</html>
