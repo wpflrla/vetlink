@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
+    
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -194,7 +195,7 @@
   <h3>간편 지원하기</h3>
   <p>아래 정보를 입력하시면 병원에 전달됩니다.</p>
 
-  <form>
+  <form id="applyForm">
     <input type="text" placeholder="이름" required />
     <input type="tel" placeholder="연락처" required />
     <input type="text" placeholder="경력 (예: 수의사 3년)" />
@@ -203,7 +204,14 @@
 
   <a href="jobs.html" class="back-link">← 채용공고 목록으로 돌아가기</a>
 </div>
-
+<script>
+document.getElementById("applyForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // 실제 전송 막기
+  alert("지원이 완료되었습니다! 병원에서 곧 연락드릴 예정입니다.");
+  this.reset(); // 입력값 초기화
+});
+</script>
 </body>
 </html>
+
 
