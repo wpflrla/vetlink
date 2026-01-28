@@ -200,16 +200,19 @@
   action="https://formsubmit.co/6bbd3bcfeba520fe97eed89e443d2b3d"
   method="POST"
 >
+  <!-- 사용자 입력 -->
   <input type="text" name="name" placeholder="이름" required />
   <input type="tel" name="phone" placeholder="연락처" required />
   <input type="text" name="career" placeholder="경력 (예: 수의사 3년)" />
 
+  <!-- 병원/채용 정보 (숨김) -->
   <input type="hidden" name="job_title" value="경력 수의사 모집" />
   <input type="hidden" name="hospital" value="행복동물병원" />
 
-  <input type="hidden" name="_next" value="https://vetlink-7w21.vercel.app/apply-success.html">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_subject" value="[동물병원채용센터] 지원서 도착">
+  <!-- FormSubmit 옵션 -->
+  <input type="hidden" name="_subject" value="[동물병원채용센터] 경력 수의사 지원" />
+  <input type="hidden" name="_template" value="table" />
+  <input type="hidden" name="_next" value="https://vetlink-7w21.vercel.app/apply-success.html" />
 
   <button type="submit" class="apply-btn">지원하기</button>
 </form>
@@ -225,6 +228,7 @@ document.getElementById("applyForm").addEventListener("submit", function () {
 </script>
 </body>
 </html>
+
 
 
 
