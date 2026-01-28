@@ -195,40 +195,32 @@
   <h3>간편 지원하기</h3>
   <p>아래 정보를 입력하시면 병원에 전달됩니다.</p>
 
-  <form id="applyForm">
-    <input type="text" placeholder="이름" required />
-    <input type="tel" placeholder="연락처" required />
-    <input type="text" placeholder="경력 (예: 수의사 3년)" />
+  <form
+  id="applyForm"
+  action="https://formsubmit.co/jhyu@tnpkorea.kr"
+  method="POST"
+>
+<input type="hidden" name="_subject" value="[동물병원채용센터] 경력 수의사 지원" />
+<input type="text" name="name" placeholder="이름" required />
+<input type="tel" name="phone" placeholder="연락처" required />
+<input type="text" name="career" placeholder="경력 (예: 수의사 3년)" />
+<input type="hidden" name="job_title" value="경력 수의사 모집" />
+<input type="hidden" name="hospital" value="행복동물병원" />
     <button type="submit" class="apply-btn">지원하기</button>
   </form>
 
   <a href="jobs.html" class="back-link">← 채용공고 목록으로 돌아가기</a>
 </div>
 <script>
-document.getElementById("applyForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // 실제 전송 막기
-  alert("지원이 완료되었습니다! 병원에서 곧 연락드릴 예정입니다.");
-  this.reset(); // 입력값 초기화
+document.getElementById("applyForm").addEventListener("submit", function () {
+  setTimeout(() => {
+    alert("지원이 완료되었습니다! 병원에서 곧 연락드릴 예정입니다.");
+  }, 300);
 });
-  .apply-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 14px 30px;
-  background: #1f3c88;
-  color: white;
-  border-radius: 30px;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-button.apply-btn {
-  border: none;
-  cursor: pointer;
-}
 </script>
 </body>
 </html>
+
 
 
 
