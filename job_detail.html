@@ -112,6 +112,18 @@
       text-decoration: none;
       font-size: 14px;
     }
+    .apply-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.apply-box input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
   </style>
 </head>
 
@@ -179,13 +191,19 @@
 
   <!-- 지원 영역 -->
   <div class="apply-box">
-    <h3>지원 방법</h3>
-    <p>아래 버튼을 눌러 병원으로 직접 지원하세요.</p>
-    <a href="tel:010-1234-5678" class="apply-btn">📞 전화 지원하기</a><br />
-    <a href="jobs.html" class="back-link">← 채용공고 목록으로 돌아가기</a>
-  </div>
+  <h3>간편 지원하기</h3>
+  <p>아래 정보를 입력하시면 병원에 전달됩니다.</p>
 
+  <form>
+    <input type="text" placeholder="이름" required />
+    <input type="tel" placeholder="연락처" required />
+    <input type="text" placeholder="경력 (예: 수의사 3년)" />
+    <button type="submit" class="apply-btn">지원하기</button>
+  </form>
+
+  <a href="jobs.html" class="back-link">← 채용공고 목록으로 돌아가기</a>
 </div>
 
 </body>
 </html>
+
