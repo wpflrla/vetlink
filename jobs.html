@@ -124,24 +124,52 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const tabButtons = document.querySelectorAll(".tabs button");
+  const jobItems = document.querySelectorAll(".sidebar li");
   const rows = document.querySelectorAll("tbody tr");
 
+  let currentRegion = "ALL";
+  let currentJob = "ALL";
+
+  function filterJobs() {
+    rows.forEach(row => {
+      const matchRegion =
+        currentRegion === "ALL" || row.dataset.region === currentRegion;
+
+      const matchJob =
+        currentJob === "ALL" || row.dataset.job === currentJob;
+
+      if (matchRegion && matchJob) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  }
+
+  // 지역 탭 클릭
   tabButtons.forEach(button => {
     button.addEventListener("click", () => {
       tabButtons.forEach(btn => btn.classList.remove("active"));
       button.classList.add("active");
 
-      const region = button.dataset.region;
-
-      rows.forEach(row => {
-        row.style.display =
-          row.dataset.region === region ? "" : "none";
-      });
+      currentRegion = button.dataset.region;
+      filterJobs();
     });
   });
 
-  // 초기 필터
-  document.querySelector(".tabs button.active").click();
+  // 직무 클릭
+  jobItems.forEach(item => {
+    item.addEventListener("click", () => {
+      jobItems.forEach(li => li.style.fontWeight = "normal");
+      item.style.fontWeight = "bold";
+
+      currentJob = item.dataset.job;
+      filterJobs();
+    });
+  });
+
+  // 초기 전체 표시
+  filterJobs();
 });
 </script>
   
@@ -160,13 +188,14 @@ document.addEventListener("DOMContentLoaded", function () {
   <!-- 왼쪽 직무 -->
   <div class="sidebar">
     <h3>직무별</h3>
-    <ul>
-      <li>수의사</li>
-      <li>간호테크니션</li>
-      <li>접수코디네이터</li>
-      <li>행정사무</li>
-      <li>애견미용</li>
-    </ul>
+ <ul>
+  <li data-job="ALL"><strong>전체</strong></li>
+  <li data-job="수의사">수의사</li>
+  <li data-job="간호테크니션">간호테크니션</li>
+  <li data-job="접수코디네이터">접수코디네이터</li>
+  <li data-job="행정사무">행정사무</li>
+  <li data-job="애견미용">애견미용</li>
+</ul>
   </div>
 
   <!-- 메인 -->
@@ -174,7 +203,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <!-- 지역 탭 -->
     <div class="tabs">
-  <button class="active" data-region="서울">서울</button>
+  <button class="active" data-region="ALL">전체</button>
+  <button data-region="서울">서울</button>
   <button data-region="경기">경기</button>
   <button data-region="부산">부산</button>
 </div>
@@ -191,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </tr>
       </thead>
 <tbody>
-  <tr data-region="서울">
+  <tr data-region="서울" data-job="수의사">
     <td>행복동물병원</td>
     <td><a class="job-link" href="job_detail.html">경력 수의사 모집</a></td>
     <td>수의사</td>
@@ -199,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <td>채용중</td>
   </tr>
 
-  <tr data-region="경기">
+  <tr data-region="경기" data-job="간호테크니션">
     <td>드림펫동물병원</td>
     <td><a class="job-link" href="job_detail.html">간호테크니션 채용</a></td>
     <td>간호테크니션</td>
@@ -207,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <td>채용중</td>
   </tr>
 
-  <tr data-region="부산">
+  <tr data-region="부산" data-job="접수코디네이터">
     <td>부산해운대동물병원</td>
     <td><a class="job-link" href="job_detail.html">접수 코디네이터 모집</a></td>
     <td>접수코디네이터</td>
@@ -222,6 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
+
 
 
 
