@@ -122,26 +122,27 @@
 </head>
   
 <script>
+document.addEventListener("DOMContentLoaded", function () {
   const tabButtons = document.querySelectorAll(".tabs button");
   const rows = document.querySelectorAll("tbody tr");
 
   tabButtons.forEach(button => {
     button.addEventListener("click", () => {
-      // 버튼 active 처리
       tabButtons.forEach(btn => btn.classList.remove("active"));
       button.classList.add("active");
 
-      const region = button.textContent;
+      const region = button.dataset.region;
 
       rows.forEach(row => {
-        if (row.dataset.region === region) {
-          row.style.display = "";
-        } else {
-          row.style.display = "none";
-        }
+        row.style.display =
+          row.dataset.region === region ? "" : "none";
       });
     });
   });
+
+  // 초기 필터
+  document.querySelector(".tabs button.active").click();
+});
 </script>
   
 <body>
@@ -173,10 +174,10 @@
 
     <!-- 지역 탭 -->
     <div class="tabs">
-      <button class="active">서울</button>
-      <button>경기</button>
-      <button>부산</button>
-    </div>
+  <button class="active" data-region="서울">서울</button>
+  <button data-region="경기">경기</button>
+  <button data-region="부산">부산</button>
+</div>
 
     <!-- 채용 리스트 -->
     <table>
@@ -189,8 +190,7 @@
           <th>마감</th>
         </tr>
       </thead>
-      <tbody>
-        <tbody>
+<tbody>
   <tr data-region="서울">
     <td>행복동물병원</td>
     <td><a class="job-link" href="job_detail.html">경력 수의사 모집</a></td>
@@ -215,7 +215,6 @@
     <td>마감임박</td>
   </tr>
 </tbody>
-      </tbody>
     </table>
 
   </div>
@@ -223,5 +222,6 @@
 
 </body>
 </html>
+
 
 
